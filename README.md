@@ -1,68 +1,65 @@
-# Astro Starter Kit: Blog
+# bun-astro-cloudflare
 
-```
-npm create astro@latest -- --template blog
-```
+https://bun-astro-cloudflare.pages.dev/
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+This is an [Astro](https://astro.build/) project built with [Bun 1.0](https://bun.sh/blog/bun-v1.0) and deployed to [Cloudflare Pages](https://pages.cloudflare.com/).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## How I created this project
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+1. Create a new Astro project with `bunx create-astro`:
 
-Features:
+   ```sh
+   $ bunx create-astro
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+   ╭─────╮  Houston:
+   │ ◠ ◡ ◠  Let's build something awesome!
+   ╰─────╯
 
-## 🚀 Project Structure
+    astro   v3.0.12 Launch sequence initiated.
 
-Inside of your Astro project, you'll see the following folders and files:
+      dir   Where should we create your new project?
+            ./bun-astro-cloudflare
 
-```
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+     tmpl   How would you like to start your new project?
+            Use blog template
+         ✔  Template copied
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+     deps   Install dependencies?
+            Yes
+         ✔  Dependencies installed
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+       ts   Do you plan to write TypeScript?
+            Yes
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+      use   How strict should TypeScript be?
+            Strict
+         ✔  TypeScript customized
 
-Any static assets, like images, can be placed in the `public/` directory.
+      git   Initialize a new git repository?
+            Yes
+         ✔  Git initialized
 
-## 🧞 Commands
+     next   Liftoff confirmed. Explore your project!
 
-All commands are run from the root of the project, from a terminal:
+            Enter your project directory using cd ./bun-astro-cloudflare
+            Run bun run dev to start the dev server. CTRL+C to stop.
+            Add frameworks like react or tailwind using astro add.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+            Stuck? Join us at https://astro.build/chat
 
-## 👀 Want to learn more?
+   ╭─────╮  Houston:
+   │ ◠ ◡ ◠  Good luck out there, astronaut! 🚀
+   ╰─────╯
+   ```
+2. Configure build settings and environment variables on Cloudflare Pages:
+   - Build command: `bun run build`
+   - Build output directory: `dist`
+   - Environment variables:
+     ```
+     SKIP_DEPENDENCY_INSTALL=true
+     UNSTABLE_PRE_BUILD=asdf plugin add bun && asdf install bun latest && asdf global bun latest && bun install
+     ```
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## References
 
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+- [Hello from Bun!](https://blog.otterlord.dev/posts/hello-from-bun/)
